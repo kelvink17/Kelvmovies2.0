@@ -1,0 +1,257 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  padding: 1rem;
+}
+
+.auth-card {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 26, 0.8),
+    rgba(13, 13, 13, 0.9)
+  );
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(75, 75, 75, 0.2);
+  backdrop-filter: blur(20px);
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 28rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease;
+}
+
+.auth-header {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.auth-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: white;
+  background: linear-gradient(to right, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.auth-header h2:after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin: 8px auto 0;
+  background: linear-gradient(to right, #8b5cf6, #ec4899);
+  border-radius: 2px;
+}
+
+.auth-header p {
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+.auth-content {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.auth-footer {
+  padding: 1.5rem;
+  border-top: 1px solid #374151;
+  text-align: center;
+}
+
+.auth-footer p {
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+.auth-link {
+  color: #8b5cf6;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+}
+
+.auth-link:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(to right, #8b5cf6, #ec4899);
+  transition: width 0.3s ease;
+}
+
+.auth-link:hover:after {
+  width: 100%;
+}
+
+.auth-link:hover {
+  color: #ec4899;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.form-group:hover {
+  transform: translateY(-2px);
+}
+
+.form-group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: white;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  background-color: #1e1e1e;
+  border: 1px solid #374151;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #6d28d9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(109, 40, 217, 0.15);
+}
+
+.forgot-password {
+  font-size: 0.75rem;
+  color: #8b5cf6;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  color: #ec4899;
+}
+
+.auth-button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1rem;
+  background: linear-gradient(to right, #6d28d9, #ec4899);
+  color: white;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 4px 10px rgba(109, 40, 217, 0.3);
+}
+
+.auth-button:hover {
+  opacity: 0.9;
+  transform: translateY(-3px);
+  box-shadow: 0 7px 15px rgba(109, 40, 217, 0.5);
+}
+
+.auth-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: -1;
+  transition: all 0.8s ease;
+}
+
+.auth-button:hover:before {
+  left: 100%;
+}
+
+.auth-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: 0 4px 10px rgba(109, 40, 217, 0.1) !important;
+}
+
+.auth-button.secondary {
+  background: transparent;
+  border: 1px solid #374151;
+  color: white;
+}
+
+.auth-button.secondary:hover {
+  background-color: #1e1e1e;
+}
+
+/* Error message styling */
+.error-message {
+  color: #f87171;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  display: block;
+  animation: shake 0.5s ease;
+}
+
+.input-error {
+  border-color: #f87171 !important;
+  box-shadow: 0 0 0 1px #f87171 !important;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
